@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elden Ring Wiki - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="home-page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <img src="elden-logo.png" alt="Elden Ring Logo" class="logo" />
+    <nav>
+      <ul class="nav-links">
+        
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Lore</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="index.html" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+<section class="hero">
+  <!-- Background Video Container -->
+  <div class="video-background">
+    <div id="player"></div>
+  </div>
+
+  <!-- Text Overlay -->
+  <div class="hero-text">
+    <h1>The Elden Wiki</h1>
+    <p>
+      The Golden Order has been broken.<br><br>
+
+      Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.<br><br>
+
+      In the Lands Between ruled by Queen Marika the Eternal, the Elden Ring, the source of the Erdtree, has been shattered.<br><br>
+
+      Marika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad taint of their newfound strength triggered a war: The Shattering. A war that meant abandonment by the Greater Will.<br><br>
+
+      And now the guidance of grace will be brought to the Tarnished who were spurned by the grace of gold and exiled from the Lands Between. Ye dead who yet live, your grace long lost, follow the path to the Lands Between beyond the foggy sea to stand before the Elden Ring.<br><br>
+
+      And become the Elden Lord.
+    </p>
+  </div>
+</section>
+
+  <!-- FEATURES (WITH BACKGROUND) -->
+  <section class="features">
+    <h2>Featured Lore</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/elden_tree.jpg" alt="Erdtree" />
+        <h3>The Erdtree</h3>
+        <p>The Erdtree is a towering, radiant tree and the divine symbol of order in the Lands Between. It channels the power of the Elden Ring and the Greater Will, its golden light blessing all beings—until the shattering disrupted its grace.</p>
+      </div>
+      <div class="card">
+        <img src="images/marika.jpg" alt="Queen Marika" />
+        <h3>Queen Marika</h3>
+        <p>Marika is the divine ruler chosen by the Greater Will. She shattered the Elden Ring in an act that changed the fate of the world. Her children, demigods, battled for its fragments, plunging the Lands Between into chaos.</p>
+      </div>
+      <div class="card">
+        <img src="images/tarnished.jpg" alt="Starscourge Radahn" />
+        <h3>Tarnished</h3>
+        <p>The Tarnished, You, are exiled warriors once blessed by grace but now forsaken. After the Shattering, they are called back to reclaim their lost glory, gather the Great Runes, and attempt to become Elden Lord by restoring the Elden Ring.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERS SECTION (WITH BUTTONS) -->
+  <section class="characters">
+    <h2>Legendary Characters</h2>
+    <div class="character-card">
+      <button onclick="prevCharacter()">&#8592;</button>
+      <div id="characterDisplay">
+        <img id="charImage" src="images/malenia.jpg" alt="Character" />
+        <h3 id="charName">Malenia, Blade of Miquella</h3>
+        <p id="charDesc">A cursed yet elegant warrior unmatched in battle. Her rot corrodes everything—even herself.</p>
+      </div>
+      <button onclick="nextCharacter()">&#8594;</button>
+    </div>
+  </section>
+
+ <!-- NEWS SECTION -->
+<section class="news-section">
+  <h2>Latest News</h2>
+  <div class="news-grid">
+    
+    <div class="news-card">
+      <img src="images/news1.jpg" alt="Shadow of the Erdtree DLC" />
+      <div class="news-content">
+        <p class="news-date">July 5, 2025</p>
+        <h3>Shadow of the Erdtree Now Live</h3>
+        <p>Experience a new realm of darkness, mystery, and power in the most awaited Elden Ring expansion.</p>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img src="images/news2.jpg" alt="PvP Balancing Patch" />
+      <div class="news-content">
+        <p class="news-date">June 21, 2025</p>
+        <h3>New PvP Update: Balance Adjustments</h3>
+        <p>Changes to weapon scaling and spells shake up the current meta — full patch notes inside.</p>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img src="images/news3.jpg" alt="Community Showcase" />
+      <div class="news-content">
+        <p class="news-date">June 10, 2025</p>
+        <h3>Community Showcase: Fan Art & Builds</h3>
+        <p>See the latest creative masterpieces and PvE builds submitted by fellow Tarnished worldwide.</p>
+        <a href="#">See showcase →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- CHARACTER SWITCH SCRIPT -->
+  <script>
+    const characters = [
+      {
+        name: "Malenia, Blade of Miquella",
+        image: "images/malenia.jpg",
+        desc: "A cursed yet elegant warrior unmatched in battle. Her rot corrodes everything—even herself."
+      },
+      {
+        name: "Messmer, the Impaler",
+        image: "images/messmer.jpg",
+        desc: "Messmer was born to Queen Marika the Eternal prior to the Second Liurnian War. His birth was cursed by a dark entity, an evil serpent coiled within that threatened to subsume him."
+      },
+      {
+        name: "Starscourge Radahn",
+        image: "images/radahn.jpg",
+        desc: "Once a hero, now a maddened beast. Fought under a crimson sky to keep the stars themselves at bay."
+      },
+      {
+        name: "Bayle the Dread",
+        image: "images/bayle.jpg",
+        desc: "Bayle the Dread was a legendary black dragon who is said to be the ancestor of the drakes or lesser dragons."
+      }
+    ];
+
+    let current = 0;
+
+    function showCharacter(index) {
+      const char = characters[index];
+      document.getElementById("charImage").src = char.image;
+      document.getElementById("charName").textContent = char.name;
+      document.getElementById("charDesc").textContent = char.desc;
+    }
+
+    function prevCharacter() {
+      current = (current - 1 + characters.length) % characters.length;
+      showCharacter(current);
+    }
+
+    function nextCharacter() {
+      current = (current + 1) % characters.length;
+      showCharacter(current);
+    }
+  </script>
+  <!-- YOUTUBE IFRAME API -->
+<script>
+  let player;
+
+  // Load the YouTube API
+  function loadYouTubeAPI() {
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+  }
+
+  // Wait for the page to fully load, then load the API
+  window.onload = function () {
+    loadYouTubeAPI();
+  };
+
+  // Called automatically by the YouTube API after it loads
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("player", {
+      videoId: "qqiC88f9ogU",
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 0,
+        loop: 1,
+        playlist: "qqiC88f9ogU",
+        modestbranding: 1,
+        rel: 0,
+        showinfo: 0
+      },
+      events: {
+        onReady: function (e) {
+          e.target.mute();
+          e.target.playVideo();
+        }
+      }
+    });
+  }
+</script>
+
+<footer class="footer">
+  <p>&copy; 2025 Elden Ring Wiki | School Project</p>
+  <p>Developed by Ron Jonathan L. Rivas of TC08, IT0043 in FEU Institute of Technology. (FOR SCHOOL PURPOSES ONLY)</p>
+</footer>
+
+
+</body>
+</html>

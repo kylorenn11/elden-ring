@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elden Ring Wiki – Login</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="login-page">
+
+  <!-- Background Image -->
+  <div class="login-bg"></div>
+
+  <!-- Login Card -->
+  <div class="login-container">
+
+    <img src="elden-logo.png" alt="Elden Ring Logo" class="login-logo"/>
+
+    <h1>Welcome, Tarnished</h1>
+    <p class="login-subtext">
+      Grace has found you once again. Enter your name and seek the truths buried beneath the Erdtree.
+    </p>
+
+    <form onsubmit="return loginUser()" class="login-form">
+      <input type="text" id="username" placeholder="Enter name..." required />
+      <input type="password" id="password" placeholder="Enter secret rune..." required />
+      <button type="submit">Begin Journey</button>
+    </form>
+
+  </div>
+
+  <script>
+    function loginUser() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      // Dummy login
+      if (user === "amazing" && pass === "jabes") {
+        window.location.href = "home.html";
+        return false;
+      } else {
+        alert("Thy credentials are false. Try admin / eldenring.");
+        return false;
+      }
+    }
+  </script>
+
+<footer class="footer">
+  <p>&copy; 2025 Elden Ring Wiki | School Project</p>
+  <p>Developed by Ron Jonathan L. Rivas of TC08, IT0043 in FEU Institute of Technology. (FOR SCHOOL PURPOSES ONLY)</p>
+</footer>
+
+</body>
+</html>
